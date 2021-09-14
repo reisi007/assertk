@@ -26,9 +26,9 @@ fun <T> Assert<List<T>>.index(index: Int): Assert<T> =
  * Asserts the list contains exactly the expected elements. They must be in the same order and
  * there must not be any extra elements.
  *
- * [1, 2] containsOnly [2, 1] fails
- * [1, 2, 2] containsOnly [2, 1] fails
- * [1, 2] containsOnly [2, 2, 1] fails
+ * [1, 2] containsExactly [2, 1] fails
+ * [1, 2, 2] containsExactly [2, 1] fails
+ * [1, 2] containsExactly [1, 2, 2] fails
  *
  * @see [containsAll]
  * @see [containsOnly]
@@ -43,7 +43,7 @@ fun Assert<List<*>>.containsExactly(vararg elements: Any?) = given { actual ->
 /**
  * Checks if the contents of the list is the same as the given array.
  */
-private fun List<*>.contentEquals(other: Array<*>): Boolean {
+internal fun List<*>.contentEquals(other: Array<*>): Boolean {
     if (size != other.size) return false
     for (i in 0 until size) {
         if (get(i) != other[i]) return false
