@@ -1,9 +1,20 @@
-# assertk
+# AssertK
 
-[![CircleCI](https://circleci.com/gh/willowtreeapps/assertk.svg?style=svg)](https://circleci.com/gh/willowtreeapps/assertk)[![Maven Central](https://img.shields.io/maven-central/v/com.willowtreeapps.assertk/assertk.svg)](https://search.maven.org/search?q=g:com.willowtreeapps.assertk)
+[![CircleCI](https://circleci.com/gh/willowtreeapps/assertk.svg?style=svg)](https://circleci.com/gh/willowtreeapps/assertk)
+[![Maven Central](https://img.shields.io/maven-central/v/com.willowtreeapps.assertk/assertk.svg)](https://search.maven.org/search?q=g:com.willowtreeapps.assertk)
 [![Sonatype Snapshot](https://img.shields.io/nexus/s/https/oss.sonatype.org/com.willowtreeapps.assertk/assertk.svg)](https://oss.sonatype.org/content/repositories/snapshots/com/willowtreeapps/assertk/)
 
-assertions for kotlin inspired by assertj
+AssertK is a fluent assertion library for Kotlin inspired by [AssertJ](https://github.com/assertj/assertj-core).
+
+* [Documentation](https://willowtreeapps.github.io/assertk/assertk/assertk.assertions/index.html)
+
+## Why another assertion library?
+
+You might be asking, "If AssertJ already exists, why create another library?". It's true, AssertK is very similar to AssertJ. But AssertK is written in Kotlin. So it has one major advantage: extension methods.
+
+Every assertion in AssertK is simply an extension method. This means adding your own **custom assertions** is easy. Sure, you _can_ create custom assertions in AssertJ, but they're cumbersome and not very intuitive.
+
+See [Custom Assertions](#custom-assertions) below to find out how to do this.
 
 ## Setup
 
@@ -240,5 +251,6 @@ fun Assert<Person>.hasMiddleName(): Assert<String> = prop(Person::middleName).is
 The general rule of thumb is to prefer building out of the existing assertions unless you can give a more meaningful
 error message.
 
-## Contributing to assertk
-Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/assertk/blob/master/Contributing.md) and be mindful of our [Code of Conduct](https://github.com/willowtreeapps/assertk/blob/master/code-of-conduct.md).
+## Contributing to AssertK
+
+Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/assertk/blob/main/Contributing.md) and be mindful of our [Code of Conduct](https://github.com/willowtreeapps/assertk/blob/main/code-of-conduct.md).
